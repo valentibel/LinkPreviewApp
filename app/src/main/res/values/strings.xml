@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">LinkPreviewApp</string>
+    <string name="url">URL</string>
+    <string name="get_preview">Get preview</string>
+</resources>
