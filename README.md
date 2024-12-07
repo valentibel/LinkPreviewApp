@@ -15,7 +15,6 @@ The app allows users to create a website preview and navigate to the site by cli
 * **Dependency Injection**: The app utilizes Hilt for DI.
 * **SOLID**: Development was strictly based on SOLID principles.
 * **Error Handling**: Comprehensive error and exception handling is in place.
-* **Localization**: The app supports localization, and all text resources are stored in strings.xml.
 
 ## Testing
 
