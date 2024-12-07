@@ -3,6 +3,7 @@ package com.valentibel.linkpreviewapp.repository
 import android.util.Log
 import com.valentibel.linkpreviewapp.model.PreviewItem
 import com.valentibel.linkpreviewapp.network.PreviewApi
+import com.valentibel.linkpreviewapp.network.PreviewApi.Companion.errorMap
 import retrofit2.HttpException
 import java.io.IOException
 import javax.inject.Inject
@@ -14,13 +15,7 @@ class PreviewRepository @Inject constructor(private val api: PreviewApi) {
             val previewItem = api.getPreview(url)
             Result.success(previewItem)
         } catch (e: HttpException) {
-            val message = when(e.code()) {
-                401, 403 -> "Access key error"
-                423 -> "Forbidden by robots.txt - the requested website does not allow us to access this page"
-                425 -> "Invalid response status code (with the actual response code we got from the remote server)"
-                426, 429 -> "Too many requests"
-                else -> "Error occurred"
-            }
+            val message = errorMap.getOrDefault(e.code(), "Error occurred")
             Result.failure(Throwable(message))
         } catch (e: IOException) {
             Result.failure(Throwable("Network error occurred"))
@@ -29,8 +24,17 @@ class PreviewRepository @Inject constructor(private val api: PreviewApi) {
         }
 
 
-    suspend fun updatePreview(url: String, fields: String) =
-        api.postPreview(url, fields)
-
+    suspend fun postPreview(url: String, fields: String): Result<PreviewItem> =
+        try {
+            val previewItem = api.postPreview(url, fields)
+            Result.success(previewItem)
+        } catch (e: HttpException) {
+            val message = errorMap.getOrDefault(e.code(), "Error occurred")
+            Result.failure(Throwable(message))
+        } catch (e: IOException) {
+            Result.failure(Throwable("Network error occurred"))
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
 
 }

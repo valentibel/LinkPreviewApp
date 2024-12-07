@@ -1,5 +1,5 @@
 [versions]
-agp = "8.7.2"
+agp = "8.7.3"
 kotlin = "2.0.0"
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -16,6 +16,7 @@ navigationCompose = "2.8.4"
 hiltNavigationCompose = "1.2.0"
 mockitoCoreVersion = "5.14.2"
 mockitoKotlinVersion = "3.2.0"
+mockwebserverVersion = "4.12.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -39,11 +40,11 @@ androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-ru
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroidVersion" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroidVersion" }
 hilt-navigation-compose = {module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationCompose"}
-hilt-android-testing = {module = "com.google.dagger:hilt-android-testing", version.ref = "hiltAndroidVersion" }
 coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coilCompose" }
 coil-network-okhttp = { module = "io.coil-kt.coil3:coil-network-okhttp", version.ref = "coilCompose" }
 retrofit = {module = "com.squareup.retrofit2:retrofit", version.ref = "retrofitVersion"}
 converter-gson = {module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofitVersion"}
+mockwebserver = {module = "com.squareup.okhttp3:mockwebserver", version.ref = "mockwebserverVersion"}
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
 mockito-core = {module = "org.mockito:mockito-core", version.ref = "mockitoCoreVersion"}
 mockito-kotlin = {module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockitoKotlinVersion"}

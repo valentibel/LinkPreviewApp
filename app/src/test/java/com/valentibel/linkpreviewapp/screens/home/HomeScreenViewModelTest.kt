@@ -1,9 +1,8 @@
-package com.valentibel.linkpreviewapp
+package com.valentibel.linkpreviewapp.screens.home
 
 import com.valentibel.linkpreviewapp.data.PreviewUiState
 import com.valentibel.linkpreviewapp.model.PreviewItem
 import com.valentibel.linkpreviewapp.repository.PreviewRepository
-import com.valentibel.linkpreviewapp.screens.home.HomeScreenViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.first

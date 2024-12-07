@@ -72,7 +72,8 @@ fun HomeScreen(viewModel: HomeScreenViewModel = hiltViewModel()) {
 
         when (val state = uiState.value) {
             is PreviewUiState.Error -> {
-                Text(text = state.message.toString(), style = MaterialTheme.typography.bodyLarge, color = Color.Red)
+                Text(text = state.message.toString(), style = MaterialTheme.typography.bodyLarge, color = Color.Red,
+                    modifier = Modifier.padding(15.dp))
                 }
             is PreviewUiState.Idle -> {
                 Box{}

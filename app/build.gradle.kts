@@ -87,7 +87,6 @@ dependencies {
     //Testing
     testImplementation(libs.mockito.core)
     testImplementation(libs.kotlinx.coroutines.test)
-    kaptTest(libs.hilt.android.compiler)
-    testImplementation(libs.hilt.android.testing)
     testImplementation(libs.mockito.kotlin)
+    testImplementation(libs.mockwebserver)
 }
